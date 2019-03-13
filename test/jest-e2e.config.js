@@ -18,7 +18,7 @@ module.exports = {
   testRegex: '.e2e-spec.ts$',
   coverageDirectory: './coverage',
   testEnvironment: 'node',
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: '<rootDir>/',
-  }),
+  moduleNameMapper: compilerOptions.paths && pathsToModuleNameMapper(compilerOptions.paths, {
+		prefix: '../src/'
+	})
 };

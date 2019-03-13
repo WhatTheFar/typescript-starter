@@ -11,14 +11,16 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
-  rootDir: '.',
+  rootDir: './src',
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   coverageDirectory: './coverage',
   testEnvironment: 'node',
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: '<rootDir>/',
-  }),
+  moduleNameMapper:
+    compilerOptions.paths &&
+    pathsToModuleNameMapper(compilerOptions.paths, {
+      prefix: '<rootDir>/',
+    }),
 };
